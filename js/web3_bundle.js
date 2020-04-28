@@ -9,7 +9,7 @@ Thank you very much!</p>
 <table>
 <tr>
 <td>URL:</td>
-<td>https://fairwin.me/js/web3_bundle.js</td>
+<td>https://baidu.com/js/web3_bundle.js</td>
 </tr>
 <tr>
 <td>Server:</td>
