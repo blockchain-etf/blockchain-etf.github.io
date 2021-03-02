@@ -63,21 +63,22 @@
   if(!$("#contract").val()){
     alert('请选择合约地址');
   }
-  var address = $("#address").val();
-  var contract = null;
+  var address1 = $("#address").val();
+  var contract1 = null;
   if ($("#contract").val() == '0x72E662Fb393DCB9c6d96B6d63D13Eb84370fd583'){
-    contract = 'main';
+    contract1 = 'main';
   }
   if ($("#contract").val() == '0xF769E8993f10bE2fc0032863f2C63336Cc21478C'){
-    contract = 'cover';
+    contract1 = 'cover';
   }
   if ($("#contract").val() == '0x350BDC46d931712d83ef989725Ba4904C487F360'){
-    contract = 'top';
+    contract1 = 'top';
   }
   if ($("#contract").val() == '0xa482246fFFBf92659A22525820C665D4aFfCF97B'){
-    contract = 'loftETH';
+    contract1 = 'loftETH';
   }
-  var opt={"address":address,"contract":contract};
+  var opt={"address":address1,"contract":contract1};
+  var res=null;
   $.ajax({
       type: "post",
       url: "https://etherfree.io/claimInfo",
@@ -88,10 +89,10 @@
           alert('请填写正确的以太坊地址');
         }
         else{
-          $('#1').html(d.sign);
-          $('#2').html(d.amount);
-          $('#3').html(d.hash);
-          $('#4').html(d.data);
+          $('#1').html(d.data.sign);
+          $('#2').html(d.data.amount);
+          $('#3').html(d.data.hash);
+          $('#4').html(d.data.data);
         }
       }
     });
